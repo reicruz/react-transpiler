@@ -6,7 +6,7 @@ body {
 
 #error {
   display: block;
-  height: 5vh;
+  height: 10vh;
   width: 100%;
   overflow: auto;
   background-color: #99ff99;
@@ -15,12 +15,16 @@ body {
 }
 
 .container {
-  height: 95vh;
+  height: 90vh;
   display: flex;
 }
 
 pre {
-  background-color: #f8f8f8
+  background-color: #474747;
+}
+
+textarea {
+  background-color: #575757;
 }
 
 pre, textarea {
@@ -29,7 +33,9 @@ pre, textarea {
   font-size: 16px;
   margin: 0;
   padding: 10px;
-  color: #222
+  color: #f8f8f8;
 }
 
-textarea:focus {outline: 0;}
+textarea:focus {
+  outline: 0;
+}
