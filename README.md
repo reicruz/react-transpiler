@@ -9,5 +9,5 @@ npm install
 npm start
 ```
 
-Open `http://localhost:3333/`.
+Open `http://localhost:3333/`
 
