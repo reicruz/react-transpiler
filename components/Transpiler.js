@@ -7,7 +7,8 @@ class Transpiler extends React.Component {
     this.state = {
       input: '/* add your jsx here*/',
       output: '',
-      err: ''
+      err: '',
+      id: ''
     }
     this.update = this.update.bind(this);
   }
@@ -29,12 +30,17 @@ class Transpiler extends React.Component {
       document.getElementById('error').style.backgroundColor = "pink"
     }
   }
+
+  componentDidMount() {
+    enableTab('input-area')
+  }
+
   render() {
     return (
       <div>
         <div className="container">
           <textarea id="input-area"
-                    spellcheck="false"
+                    spellCheck="false"
                     onChange={this.update}
                     defaultValue={this.state.input}>
           </textarea>
