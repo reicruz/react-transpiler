@@ -1,23 +1,29 @@
-function enableTab(id) {
-  var el = document.getElementById(id);
-  el.onkeydown = function(e) {
-    if (e.keyCode === 9) { // tab was pressed
+/**
+Tab insertion code taken and modified from https://jsfiddle.net/2wAzx/13/.
+*/
 
-      // get caret position/selection
-      var val = this.value,
-      start = this.selectionStart,
-      end = this.selectionEnd;
+$(document).ready(function() {
+  function enableTab(id) {
+    var el = document.getElementById(id);
+    el.onkeydown = function(e) {
+      if (e.keyCode === 9) { // tab was pressed
 
-      // set textarea value to: text before caret + tab + text after caret
-      this.value = val.substring(0, start) + '\t' + val.substring(end);
+        // get caret position/selection
+        var val = this.value,
+        start = this.selectionStart,
+        end = this.selectionEnd;
 
-      // put caret at right position again
-      this.selectionStart = this.selectionEnd = start + 1;
+        // set textarea value to: text before caret + tab + text after caret
+        this.value = val.substring(0, start) + '\t' + val.substring(end);
 
-      // prevent the focus lose
-      return false;
+        // put caret at right position again
+        this.selectionStart = this.selectionEnd = start + 1;
+
+        // prevent the focus lose
+        return false;
+      }
     }
   }
-}
 
-enableTab('input-area');
+  enableTab('input-area');
+});
