@@ -34,6 +34,7 @@ class Transpiler extends React.Component {
       <div>
         <div className="container">
           <textarea id="input-area"
+                    spellcheck="false"
                     onChange={this.update}
                     defaultValue={this.state.input}>
           </textarea>
